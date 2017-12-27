@@ -5,36 +5,40 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+  <link rel="stylesheet" href="css/enroll.css" />
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 </head>
 
 <body>
-
-  <h1 id="fireheading">Lalalalalala</h1>
-
-  <form class="container">
-    <div class="form-row">
-      <div class="form-group col-md-6">
-        <label>Name</label>
-        <input id="nameText" type="text" class="form-control" placeholder="Enter name">
+  <div class="text-center" style="padding-top: 15px;">
+    <h1>Vocational Training Center Enrollment Form</h1>
+  </div>
+  <div class="alert text-center">
+    Form has been Submited!
+  </div>
+  <div id="main_position">
+    <form id="enrollform">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label>Name : </label>
+          <input name="name" id="nameText" type="text" class="form-control" placeholder="Enter name" required>
+        </div>
       </div>
-    </div>
-    <div class="form-row">
-      <div class="form-group col-md-6">
-        <label>Contact No.</label>
-        <input id="noText" type="text" class="form-control" placeholder="Contact No.">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label>Contact No : </label>
+          <input id="noText" type="text" class="form-control" placeholder="Contact No." required>
+        </div>
       </div>
-    </div>
-    <div class="form-row">
-      <div class="form-group col-md-2">
-        <label>Age</label>
-        <input id="ageText" type="number" class="form-control" placeholder="Age" />
-      </div>
-      <div class="form-group col-md-2">
-        <label>Sex</label>
-        <select class="form-control">
+      <div class="form-row">
+        <div class="form-group col-md-2">
+          <label>Age : </label>
+          <input id="ageText" type="number" class="form-control" placeholder="Age" required>
+        </div>
+        <div class="form-group col-md-2">
+          <label>Sex : </label>
+          <select id="sexText" class="form-control" required>
         <option>
           Male
         </option>
@@ -45,12 +49,12 @@
           Other
         </option>
       </select>
+        </div>
       </div>
-    </div>
-    <div class="form-row">
-      <div class="form-group col-md-6">
-        <label>Course for which you want to Enroll</label>
-        <select class="form-control" name="Select here">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label>Course you want to Enroll for : </label>
+          <select id="courseText" class="form-control" name="Select here" required>
           <option>
             Mason
           </option>
@@ -103,30 +107,23 @@
             Road Layer
           </option>
         </select>
+        </div>
       </div>
-    </div>
-    <div class="form-group">
-      <label for="exampleFormControlFile1">Photo of yourself</label>
-      <input type="file" class="form-control-file" id="exampleFormControlFile1">
-    </div>
-    <button type="submit" onclick="clicky()" id="submitBtn" class="btn btn-primary">Submit</button>
-  </form>
-
-
+      <div class="form-group">
+        <label for="exampleFormControlFile1">Photo of yourself : </label>
+        <input type="file" class="form-control-file" id="exampleFormControlFile1">
+      </div>
+      <div style="padding-top: 20px;">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+  </div>
+  <div class="text-center" style="padding-top: 20px;">
+    <h2>Go back to </h2>
+    <a href="index.html">Home</a><br />
+    <a href="placement.html">Placements</a>
+  </div>
   <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyDnQhh6PxauVjYj-mW_If5-hhHFi6HNWZI",
-      authDomain: "vtcsite-70c78.firebaseapp.com",
-      databaseURL: "https://vtcsite-70c78.firebaseio.com",
-      projectId: "vtcsite-70c78",
-      storageBucket: "vtcsite-70c78.appspot.com",
-      messagingSenderId: "54800151754"
-    };
-    firebase.initializeApp(config);
-  </script>
-
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
