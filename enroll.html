@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+</head>
+
+<body>
+
+  <h1 id="fireheading">Lalalalalala</h1>
+
+  <form class="container">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Name</label>
+        <input id="nameText" type="text" class="form-control" placeholder="Enter name">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Contact No.</label>
+        <input id="noText" type="text" class="form-control" placeholder="Contact No.">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-2">
+        <label>Age</label>
+        <input id="ageText" type="number" class="form-control" placeholder="Age" />
+      </div>
+      <div class="form-group col-md-2">
+        <label>Sex</label>
+        <select class="form-control">
+        <option>
+          Male
+        </option>
+        <option>
+          Female
+        </option>
+        <option>
+          Other
+        </option>
+      </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Course for which you want to Enroll</label>
+        <select class="form-control" name="Select here">
+          <option>
+            Mason
+          </option>
+          <option>
+            Assistant Mason
+          </option>
+          <option>
+            Tiles and Marbles Fitter
+          </option>
+          <option>
+            Asst. Shuttering Carpenter and Scaffolder
+          </option>
+          <option>
+            Conventional Shuttering Carpenter
+          </option>
+          <option>
+            Building Carpenter
+          </option>
+          <option>
+            Assitant Bar bender & Steel fixer
+          </option>
+          <option>
+            Bar bender and Steel Fixer
+          </option>
+          <option>
+            Assistant Plumber
+          </option>
+          <option>
+            Plumber
+          </option>
+          <option>
+            Wall Painter
+          </option>
+          <option>
+            Wood Painter
+          </option>
+          <option>
+            PoP Technician
+          </option>
+          <option>
+            Work Assistant (Mukkardam)
+          </option>
+          <option>
+            Concrete & Pavers block maker
+          </option>
+          <option>
+            General Work Supervisor
+          </option>
+          <option>
+            Road Layer
+          </option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlFile1">Photo of yourself</label>
+      <input type="file" class="form-control-file" id="exampleFormControlFile1">
+    </div>
+    <button type="submit" onclick="clicky()" id="submitBtn" class="btn btn-primary">Submit</button>
+  </form>
+
+
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDnQhh6PxauVjYj-mW_If5-hhHFi6HNWZI",
+      authDomain: "vtcsite-70c78.firebaseapp.com",
+      databaseURL: "https://vtcsite-70c78.firebaseio.com",
+      projectId: "vtcsite-70c78",
+      storageBucket: "vtcsite-70c78.appspot.com",
+      messagingSenderId: "54800151754"
+    };
+    firebase.initializeApp(config);
+  </script>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="js/enroll.js"></script>
+</body>
+
+</html>
