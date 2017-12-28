@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Admin</title>
+  <title>VTC | Admin</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,8 +12,74 @@
 </head>
 
 <body>
-  <div class="text-center">
-    <h1>Admin</h1>
+
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #3a29cc">
+    <a class="navbar-brand" href="#">VTC</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="enroll.html">Enroll</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="placement.html">Placements</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Admin <span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Modal Button -->
+  <div class="text-center button_position">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="background-color: #3a29cc;">Placement Form</button>
+  </div>
+
+  <!-- Placement Form Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Enter Placement Company details</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
+          <form id="companyform">
+            <div class="form-group">
+              <label for="company-name" class="col-form-label">Company Name:</label>
+              <input type="text" class="form-control" placeholder="Company Name" id="company-name" required>
+            </div>
+            <div class="form-group">
+              <label for="worker-type" class="col-form-label">Type of workers required:</label>
+              <input type="text" class="form-control" id="worker-type" placeholder="Type" required>
+            </div>
+            <div class="form-group">
+              <label for="worker-no" class="col-form-label">No. of Workers Required:</label>
+              <input type="number" class="form-control" id="worker-no" placeholder="Number" required>
+            </div>
+            <div style="padding-top: 20px;">
+              <button type="submit" class="btn btn-primary" style="background-color: #3a29cc;">Submit</button>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Enrollment Table -->
+  <div class="text-center title_">
+    <h1>Enrollment Table</h1>
   </div>
   <div class="container">
     <table class="table">

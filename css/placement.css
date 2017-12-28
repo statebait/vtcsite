@@ -1,0 +1,11 @@
+.title_ {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+@media (max-width: 576px) {
+  .title_ {
+    margin-top: 20px;
+    margin-bottom: 0px;
+  }
+}

@@ -1,0 +1,20 @@
+.title_ {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.button_position {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 576px) {
+  .title_ {
+    margin-top: 20px;
+    margin-bottom: 0px;
+  }
+  .button_position {
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+}

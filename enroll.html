@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <title>VTC | Enrollment</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,8 +12,30 @@
 </head>
 
 <body>
-  <div class="text-center" style="padding-top: 15px;">
-    <h1>Vocational Training Center Enrollment Form</h1>
+
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #3a29cc">
+    <a class="navbar-brand" href="#">VTC</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Enroll <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="placement.html">Placements</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="text-center title_">
+    <h1>Enrollment Form</h1>
   </div>
   <div class="alert text-center">
     Form has been Submited!
@@ -114,15 +137,11 @@
         <input type="file" class="form-control-file" id="exampleFormControlFile1">
       </div>
       <div style="padding-top: 20px;">
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary" style="background-color: #3a29cc;">Submit</button>
       </div>
     </form>
   </div>
-  <div class="text-center" style="padding-top: 20px;">
-    <h2>Go back to </h2>
-    <a href="index.html">Home</a><br />
-    <a href="placement.html">Placements</a>
-  </div>
+
   <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
