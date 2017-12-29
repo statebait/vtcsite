@@ -36,6 +36,12 @@
   <div class="text-center title_">
     <h1>Placements Available</h1>
   </div>
+
+  <!-- Modal Button -->
+  <div class="text-center button_position">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal1" style="background-color: #3a29cc;">Take A Job</button>
+  </div>
+
   <div class="container">
     <table class="table">
       <thead>
@@ -43,12 +49,58 @@
           <th>Company Name</th>
           <th>Type of Worker Req.</th>
           <th>No. Required</th>
-          <th>Action</th>
+          <th>Wages per Day</th>
+          <th>Job No.</th>
         </tr>
       </thead>
       <tbody id="table_body">
       </tbody>
     </table>
+  </div>
+
+  <!-- Take A Job Form Modal -->
+  <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModal1" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Enter Your Details</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
+          <form id="detailsform">
+            <div class="form-group">
+              <label for="jobno" class="col-form-label">Job No. you want to apply for:</label>
+              <input type="text" class="form-control" placeholder="Job No" id="jobno" required>
+            </div>
+            <div class="form-group">
+              <label for="company_name" class="col-form-label">Company Name:</label>
+              <input type="text" class="form-control" placeholder="Company Name" id="company_name" required>
+            </div>
+            <div class="form-group">
+              <label for="worker_name" class="col-form-label">Name:</label>
+              <input type="text" class="form-control" placeholder="Name" id="worker_name" required>
+            </div>
+            <div class="form-group">
+              <label for="contact_no" class="col-form-label">Contact No:</label>
+              <input type="number" class="form-control" id="contact_no" placeholder="Contact No" required>
+            </div>
+            <div class="form-group">
+              <label for="certi_no" class="col-form-label">Certificate No:</label>
+              <input type="number" class="form-control" id="certi_no" placeholder="Certificate No" required>
+            </div>
+
+            <div style="padding-top: 20px;">
+              <button type="submit" class="btn btn-primary" style="background-color: #3a29cc;">Submit</button>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>

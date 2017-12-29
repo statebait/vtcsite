@@ -36,7 +36,7 @@
     </div>
   </nav>
 
-  <!-- Modal Button -->
+  <!-- Placement Form Modal Button -->
   <div class="text-center button_position">
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="background-color: #3a29cc;">Placement Form</button>
   </div>
@@ -62,6 +62,10 @@
               <input type="text" class="form-control" id="worker-type" placeholder="Type" required>
             </div>
             <div class="form-group">
+              <label for="wages" class="col-form-label">Wages Per Day(in Rupees):</label>
+              <input type="number" class="form-control" placeholder="Wages per Day" id="wages" required>
+            </div>
+            <div class="form-group">
               <label for="worker-no" class="col-form-label">No. of Workers Required:</label>
               <input type="number" class="form-control" id="worker-no" placeholder="Number" required>
             </div>
@@ -78,23 +82,100 @@
   </div>
 
   <!-- Enrollment Table -->
-  <div class="text-center title_">
-    <h1>Enrollment Table</h1>
+  <div class="text-center">
+    <button onclick="show_enroll()" type="button" class="btn btn-primary" style="background-color: #3a29cc; margin-top: 20px;">Enrollment Table</button>
   </div>
-  <div class="container">
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Contact No.</th>
-          <th>Age</th>
-          <th>Sex</th>
-          <th>Course</th>
-        </tr>
-      </thead>
-      <tbody id="table_body">
-      </tbody>
-    </table>
+  <div id="enrollment_table">
+    <div class="text-center title_">
+      <h1>Enrollment Table</h1>
+    </div>
+    <div class="container">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Contact No.</th>
+            <th>Age</th>
+            <th>Sex</th>
+            <th>Course</th>
+          </tr>
+        </thead>
+        <tbody id="table_body">
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Placed Table -->
+  <div class="text-center">
+    <button onclick="show_enroll2()" type="button" class="btn btn-primary" style="background-color: #3a29cc; margin-top: 30px;">Placed Table</button>
+  </div>
+  <div id="placed_table">
+    <div class="text-center title_">
+      <h1>Placed Table</h1>
+    </div>
+    <div class="container">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Contact No.</th>
+            <th>Certificate No.</th>
+            <th>Company Name</th>
+            <th>Job Name</th>
+          </tr>
+        </thead>
+        <tbody id="table_body2">
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Delete Modal Button -->
+  <div class="text-center button_position">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#deleteModal" style="background-color: #3a29cc;">Delete Dataset</button>
+  </div>
+
+  <!-- Delete Modal -->
+  <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Enter Details</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
+          <form id="deleteform">
+            <div class="form-group">
+              <label for="table_select" class="col-form-label">Select Data Table:</label>
+              <select class="form-control" id="table_select" required>
+                <option>
+                  Placement Company
+                </option>
+                <option>
+                  Enrollment Forms
+                </option>
+                <option>
+                  Placed Workers
+                </option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="data_id" class="col-form-label">UID of Dataset:</label>
+              <input type="text" class="form-control" id="data_id" placeholder="UID" required>
+            </div>
+          </form>
+          <div style="padding-top: 20px;">
+            <button type="button" onclick="delete_dataset()" class="btn btn-primary" style="background-color: #3a29cc;">Delete</button>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>

@@ -3,9 +3,16 @@
   margin-bottom: 50px;
 }
 
+.button_position {
+  margin-bottom: 30px;
+}
+
 @media (max-width: 576px) {
   .title_ {
     margin-top: 20px;
     margin-bottom: 0px;
+  }
+  .button_position {
+    margin-bottom: 20px;
   }
 }

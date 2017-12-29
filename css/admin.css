@@ -8,6 +8,14 @@
   margin-bottom: 10px;
 }
 
+#enrollment_table {
+  display: none;
+}
+
+#placed_table {
+  display: none;
+}
+
 @media (max-width: 576px) {
   .title_ {
     margin-top: 20px;
