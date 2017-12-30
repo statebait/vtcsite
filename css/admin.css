@@ -8,6 +8,20 @@
   margin-bottom: 10px;
 }
 
+.alert {
+  color: green;
+  display: none;
+}
+
+#alert {
+  color: green;
+  display: none;
+}
+
+#pagebody {
+  display: none;
+}
+
 #enrollment_table {
   display: none;
 }

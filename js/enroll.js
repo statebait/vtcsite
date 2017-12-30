@@ -35,6 +35,9 @@ function clicky(e) {
   setTimeout(function() {
     document.querySelector('.alert').style.display = 'none';
   }, 3000);
+
+  //Form Reset
+  document.getElementById("enrollform").reset();
 }
 
 //function to get value from form

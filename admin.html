@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 </head>
 
-<body>
+<body id="pagebody">
 
   <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #3a29cc">
     <a class="navbar-brand" href="#">VTC</a>
@@ -52,6 +52,9 @@
         </button>
         </div>
         <div class="modal-body">
+          <div class="alert text-center">
+            Form has been Submited!
+          </div>
           <form id="companyform">
             <div class="form-group">
               <label for="company-name" class="col-form-label">Company Name:</label>
@@ -147,6 +150,9 @@
         </button>
         </div>
         <div class="modal-body">
+          <div class="text-center" id="alert">
+            Deleted if Dataset existed.
+          </div>
           <form id="deleteform">
             <div class="form-group">
               <label for="table_select" class="col-form-label">Select Data Table:</label>
@@ -179,18 +185,6 @@
   </div>
 
   <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyDnQhh6PxauVjYj-mW_If5-hhHFi6HNWZI",
-      authDomain: "vtcsite-70c78.firebaseapp.com",
-      databaseURL: "https://vtcsite-70c78.firebaseio.com",
-      projectId: "vtcsite-70c78",
-      storageBucket: "vtcsite-70c78.appspot.com",
-      messagingSenderId: "54800151754"
-    };
-    firebase.initializeApp(config);
-  </script>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -1,3 +1,14 @@
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyDnQhh6PxauVjYj-mW_If5-hhHFi6HNWZI",
+  authDomain: "vtcsite-70c78.firebaseapp.com",
+  databaseURL: "https://vtcsite-70c78.firebaseio.com",
+  projectId: "vtcsite-70c78",
+  storageBucket: "vtcsite-70c78.appspot.com",
+  messagingSenderId: "54800151754"
+};
+firebase.initializeApp(config);
+
 var rootRef = firebase.database().ref().child('enrollforms');
 
 rootRef.on("child_added", snap => {
@@ -22,6 +33,7 @@ placeRef.on("child_added", snap => {
   $("#table_body2").append("<tr><td>" + name + "</td><td>" + contact + "</td><td>" + certificate + "</td><td>" + company + "</td><td>" + jobno + "</td></tr>");
 });
 
+// Placement Form Submission
 //Reference form data collection
 var messageRef = firebase.database().ref('placementlisting');
 
@@ -39,14 +51,17 @@ function clicky(e) {
 
   //Save Message
   saveMessage(company, type, number, wages);
-  /*
-    //Show alert
-    document.querySelector('.alert').style.display = 'block';
 
-    //Hide alert after 3 seconds
-    setTimeout(function() {
-      document.querySelector('.alert').style.display = 'none';
-    }, 3000);*/
+  //Show alert
+  document.querySelector('.alert').style.display = 'block';
+
+  //Hide alert after 3 seconds
+  setTimeout(function() {
+    document.querySelector('.alert').style.display = 'none';
+  }, 3000);
+
+  //Form Reset
+  document.getElementById("companyform").reset();
 }
 
 //function to get value from form
@@ -65,6 +80,7 @@ function saveMessage(company, type, number, wages) {
   });
 }
 
+//Toggle show/hide for Enrollment table
 function show_enroll() {
   var x = document.getElementById("enrollment_table");
   if (x.style.display === "none") {
@@ -74,6 +90,7 @@ function show_enroll() {
   }
 }
 
+//Toggle show/hide for Placed table
 function show_enroll2() {
   var x = document.getElementById("placed_table");
   if (x.style.display === "none") {
@@ -83,12 +100,12 @@ function show_enroll2() {
   }
 }
 
+//Delete Funciton
 function delete_dataset() {
 
   var table = getInputVal('table_select');
   var uid = getInputVal('data_id');
-  console.log(uid);
-  console.log(table);
+
   if (table == "Placement Company") {
     var deleteRef = firebase.database().ref('placementlisting').child(uid);
     deleteRef.remove();
@@ -99,4 +116,45 @@ function delete_dataset() {
     var deleteRef = firebase.database().ref('detailsforms').child(uid);
     deleteRef.remove();
   }
+  //Show alert
+  document.querySelector('#alert').style.display = 'block';
+  //Hide alert after 3 seconds
+  setTimeout(function() {
+    document.querySelector('#alert').style.display = 'none';
+  }, 3000);
+  //Form Reset
+  document.getElementById("deleteform").reset();
 }
+
+//Log in system
+function log_in() {
+
+  var passRef = firebase.database().ref().child('password');
+  passRef.on('value', function(datasnapshot) {
+    var password = datasnapshot.val();
+    var flag = 0;
+    var loggy = prompt('Please Enter the password : ');
+    while (flag == 0) {
+      if (loggy == password) {
+        document.querySelector('#pagebody').style.display = 'block';
+        flag = 1;
+      } else {
+        loggy = prompt('Wrong Password :( - Please Try Again');
+      }
+    }
+  });
+
+}
+log_in();
+
+/*
+//Preventing inspect element
+$(document).bind("contextmenu", function(e) {
+  e.preventDefault();
+});
+
+$(document).keydown(function(e) {
+  if (e.which === 123) {
+    return false;
+  }
+});*/

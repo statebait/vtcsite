@@ -29,6 +29,18 @@ function clicky(e) {
 
   //Save Message
   saveMessage(name, contact, certificate, company, jobno);
+
+  //Show alert
+  document.querySelector('.alert').style.display = 'block';
+
+  //Hide alert after 3 seconds
+  setTimeout(function() {
+    document.querySelector('.alert').style.display = 'none';
+  }, 3000);
+
+  //Form Reset
+  document.getElementById("detailsform").reset();
+
 }
 
 //function to get value from form
