@@ -9,6 +9,7 @@ var config = {
 };
 firebase.initializeApp(config);
 
+// Enrollment Table Fetch
 var rootRef = firebase.database().ref().child('enrollforms');
 
 rootRef.on("child_added", snap => {
@@ -17,10 +18,16 @@ rootRef.on("child_added", snap => {
   var age = snap.child('age').val();
   var sex = snap.child('sex').val();
   var course = snap.child('course').val();
+  var address = snap.child('address').val();
+  var aadhar = snap.child('aadhar').val();
+  var pass = snap.child('pass').val();
+  var caste = snap.child('caste').val();
+  var uid = snap.key;
 
-  $("#table_body").append("<tr><td>" + name + "</td><td>" + contact + "</td><td>" + age + "</td><td>" + sex + "</td><td>" + course + "</td></tr>");
+  $("#table_body").append("<tr><td>" + name + "</td><td>" + contact + "</td><td>" + age + "</td><td>" + sex + "</td><td>" + course + "</td><td>" + address + "</td><td><a href=" + aadhar + " target=_blank>link</a></td><td><a href=" + pass + " target=_blank>link</a></td><td><a href=" + caste + " target=_blank>link</a></td><td>" + uid + "</td></tr>");
 });
 
+//Placed Table Fetch
 var placeRef = firebase.database().ref().child('detailsforms');
 
 placeRef.on("child_added", snap => {
@@ -109,9 +116,42 @@ function delete_dataset() {
   if (table == "Placement Company") {
     var deleteRef = firebase.database().ref('placementlisting').child(uid);
     deleteRef.remove();
+
   } else if (table == "Enrollment Forms") {
     var deleteRef = firebase.database().ref('enrollforms').child(uid);
+    var filename;
+    var filename1;
+    var filename2;
+    deleteRef.on('value', function(snapshot) {
+      filename = snapshot.child('aadhar_name').val();
+      filename1 = snapshot.child('pass_name').val();
+      filename2 = snapshot.child('caste_name').val();
+    })
+    // Create a reference to the file to delete
+    storageRef = firebase.storage().ref();
+    var desertRef = storageRef.child('aadhar/' + filename);
+    // Delete the file
+    desertRef.delete().then(function() {
+      // File deleted successfully
+    }).catch(function(error) {
+      console.log('Aadhar File Not deleted');
+    });
+    var desertRef1 = storageRef.child('pass/' + filename1);
+    // Delete the file
+    desertRef1.delete().then(function() {
+      // File deleted successfully
+    }).catch(function(error) {
+      console.log('Pass File Not deleted');
+    });
+    var desertRef2 = storageRef.child('caste/' + filename2);
+    // Delete the file
+    desertRef2.delete().then(function() {
+      // File deleted successfully
+    }).catch(function(error) {
+      console.log('Caste File Not deleted');
+    });
     deleteRef.remove();
+
   } else if (table == "Placed Workers") {
     var deleteRef = firebase.database().ref('detailsforms').child(uid);
     deleteRef.remove();
@@ -147,7 +187,7 @@ function log_in() {
 }
 log_in();
 
-/*
+
 //Preventing inspect element
 $(document).bind("contextmenu", function(e) {
   e.preventDefault();
@@ -157,4 +197,4 @@ $(document).keydown(function(e) {
   if (e.which === 123) {
     return false;
   }
-});*/
+});
